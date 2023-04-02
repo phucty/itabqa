@@ -1,0 +1,53 @@
+---
+title: "Quarto Basics"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+For visualize dataset of table image question, answering
+
+
+```{python}
+from itabqa import loader, objs
+from plotly.offline import init_notebook_mode, iplot
+from IPython.display import HTML, display
+
+init_notebook_mode()
+```
+
+
+```{python}
+# | label: fig-groundtruth
+# | fig-cap: "val_table_image_7517__GPC__2013__page_55_split_0"
+sample = loader.load_sample_from_id(
+    objs.DataSplit.VAL, "val_table_image_7673__DVA__2013__page_88_split_0"
+)
+sample.draw_image(show_bbox=True, show_text=True)
+display(HTML(sample.to_html()))
+
+```
+
+```{python}
+# | label: fig-predict
+# | fig-cap: "96801_7518"
+sample2 = loader.load_sample_tr_from_id(objs.DataSplit.VAL, "96801_7518")
+sample.draw_image(show_bbox=True, show_text=True)
+display(HTML(sample2.to_html()))
+```
+
+
+```{python}
+# | label: fig-sample
+# | fig-cap: "random sample"
+samples = loader.load_samples(objs.DataSplit.VAL, head=2)
+loader.print_sample(samples[1], n_questions=3, show_bbox=True)
+```
+
+
+
+
+
+
+
