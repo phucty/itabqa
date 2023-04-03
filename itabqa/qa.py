@@ -44,7 +44,7 @@ class QA_MODEL(str, Enum):
     OMNITAB_FT_HEADER_3 = (
         "/disks/strg16-176/VQAonBD2023/models/omnitab-large-finetuned-qa-200k-header-2"
     )
-    OMNITAB_FT_HEADER_4 = "/disks/strg16-176/VQAonBD2023/models/omnitab-large-finetuned-qa-all-header/checkpoint-400000"
+    OMNITAB_FT_HEADER_4 = "/disks/strg16-176/VQAonBD2023/models/omnitab-large-finetuned-qa-all-header"
     # omnitab-large-1024shot-finetuned-wtq-1024shot
     # omnitab-large-finetuned-wtq
     # ZERO = "neulab/omnitab-large-finetuned-wtq"

@@ -99,7 +99,8 @@ python -m torch.distributed.launch --nproc_per_node=4 run.py \
 ***
 ## Run QA:
 The qa models are in [itabqa/qa.py](itabqa/qa.py).
-After fine-tuning, like previous example, the model is in `/disks/strg16-176/VQAonBD2023/models/omnitab-large-finetuned-qa-all-raw`
+After fine-tuning, like previous example, the model is in `/disks/strg16-176/VQAonBD2023/models/omnitab-large-finetuned-qa-all-raw`.
+The pretrained model is [here](https://drive.google.com/file/d/1Shch5gdtjv5IGWsY0uXAJ4BNOXnJqcjS/view).
 We can run QA inference as
 ```
 cd ..
