@@ -55,9 +55,18 @@ Please setup working directory to your setting in [itabqa/config.py](itabqa/conf
 
 ## Table structure extraction
 
-Please run the file [MTL-TabNet/table_inference_VQAonBD2023_inference.py](MTL-TabNet/table_inference_VQAonBD2023_inference.py)
-to gerate HTML tables from document images
-
+Please install [MTL-TabNet](https://github.com/namtuanly/MTL-TabNet) (the table structure extraction module) in your GPU server and download the checkpoint file in [here](https://drive.google.com/file/d/1pnEeGb8rijCLyK2JgyxTz-UuRWmMt7Xh/view?usp=share_link).
+Run the the following command to gerate HTML tables from document images (you can change the path of input images, the path of outputs and the path of the checkpoint file):
+```
+CUDA_VISIBLE_DEVICES=0 python3 -u ./table_recognition/table_inference_VQAonBD2023_inference.py 1 0
+```
+You can run the script in multi GPUs (4 GPUs) by the following commands:
+```
+CUDA_VISIBLE_DEVICES=0 python3 -u ./table_recognition/table_inference_VQAonBD2023_inference.py 4 0
+CUDA_VISIBLE_DEVICES=1 python3 -u ./table_recognition/table_inference_VQAonBD2023_inference.py 4 1
+CUDA_VISIBLE_DEVICES=2 python3 -u ./table_recognition/table_inference_VQAonBD2023_inference.py 4 2
+CUDA_VISIBLE_DEVICES=3 python3 -u ./table_recognition/table_inference_VQAonBD2023_inference.py 4 3
+```
 ***
 ## Generate training samples for QA model
 ```
